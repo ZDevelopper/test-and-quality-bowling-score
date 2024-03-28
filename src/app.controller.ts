@@ -16,4 +16,22 @@ export class AppController {
     const score = new BowlingScore(frames);
     return score.calculateTotalScore();
   }
+
+  @Post('bowling-score')
+  calculateScoreWithSpares(@Body() frames: number[]): number {
+    const score = new BowlingScore(frames);
+    return score.calculateTotalScoreWithSpare();
+  }
+
+  @Post('bowling-score')
+  calculateTotalScoreWithStrike(@Body() frames: number[]): number {
+    const score = new BowlingScore(frames);
+    return score.calculateTotalScoreWithStrike();
+  }
+
+  @Post('bowling-score')
+  calculateTotalScoreWithSpareAndStrike(@Body() frames: number[]): number {
+    const score = new BowlingScore(frames);
+    return score.calculateTotalScoreWithSpareAndStrike();
+  }
 }
